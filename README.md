@@ -1,5 +1,6 @@
 # Structural and functional connectome coupling (SC-FC coupling)
 scripts for extracting data and analysis for paper "xxxxx"
+
 Heritability analysis model is adopted from previous paper [Heritability analysis with repeat measurements and its
 application to resting-state functional connectivity](https://www.pnas.org/content/114/21/5521/tab-article-info). Please cite if you use the model.
 
