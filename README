@@ -1,0 +1,54 @@
+# Please read the information below before running the test code
+
+1. System Requirements
+
+1.1 Software dependencies and operating systems
+Current Python version is 3.8.3. Current MATLAB version is R2020a.
+Current operating system is macOS Catalina version 10.15.7.
+
+1.2 Versions the software has been tested on
+The code should be able to run on any version of Python 3 and any recent version of MATLAB.
+If possible error occurs, please change certain function names according to the error log.
+Function names may be changed between different versions.
+
+1.3 All required non-standard hardware
+None.
+
+2. Installation Guide
+
+2.1 Instructions
+1) Install Python by following instructions here: https://www.python.org/downloads/
+2) Install Matlab by following instructions here: https://www.mathworks.com/help/install/install-products.html
+3) pip -r install requirements.txt
+
+2.2 Typical install time
+If you already have Python and MATLAB installed on the computer, the install time for the required packages will be less than 1 min.
+
+3. Demo
+
+3.1 Instructions to run on data
+At your terminal, run glm_demo.py to get the SC-FC coupling and GLM results saved in data directory and glm_res directory.
+In your MATLAB, run herit_demo.m to get the heritability estimates of some random phenotypes you created.
+
+3.2 Expected output
+Under the data directory, you will have your self-generated SC, FC and SC-FC coupling data for the number of subjects you specify. Also there will be covariates data (age, sex, cognition, ICV and motion) if you do GLM analysis.
+Under the glm_res directory, you will have a series txt files named GLMvar'n''prec/corr'_'all/sig'roi.txt which contains the -log(p) values for different covariates (index by number n). 'allroi' files contains -log(p) value for all the regions while 'sigroi' files only contains regions that are significant with other regions masked as 0. There is another mat file named GLM_'corr/prec'_confint.mat which contains the confident interval for the GLM results.
+Under the herit_res directory, you will have a file named herit_cp.mat which is the heritability estimates using the LME model.
+
+3.3 Expected run time
+This depends on the number of subjects and the number of regions you choose. Typically for subject_num=100, region_num=392, glm will take less than 5 miniutes. Heritability analysis will take longer. Typically for 4 sessions, it takes around 12 hours.
+
+4. Instructions for use
+
+4.1 How to run software on your data
+The github repo (https://github.com/zijin-gu/scfc-coupling) contains all information on how to extract the unrelated subjects from my preprocessed data and how to do the following analysis. The original data is available if needed.
+
+4.2 Reproduction instructions
+1) To do the GLM analysis, prepare your SC, FC data, named as 'SC_unrelated100.mat', 'FCprec_unrelated100.mat' for 100 subjects, or change the name in the function. In the matfile, the data should be structured as (#subjects, #regions, #regions). If you only have correlation FC data, you can use the code under 'prec' to get the precision FC data.
+2) To do the heritability analysis, prepare your phenotype data, your covariates matrix and your gamma matrix which contains additive genetic effect, shared environmental effect and unique environmental effect. Use the function Morphometricity_NRandEffects.m. Please refer to the original paper for detail.
+
+
+References
+Ge, T., Holmes, A. J., Buckner, R. L., Smoller, J. W., & Sabuncu, M. R. (2017). Heritability analysis with repeat measurements and its application to resting-state functional connectivity. Proceedings of the National Academy of Sciences, 114(21), 5521-5526.
+
+
