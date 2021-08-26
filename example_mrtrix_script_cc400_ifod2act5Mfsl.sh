@@ -1,5 +1,6 @@
 SUBJECT=100206
 
+ATLASDIR=MNIATLASES
 INPUTDIR=HCPDATADIR/${SUBJECT}
 diffdir=${INPUTDIR}/T1w/Diffusion
 regimg=${diffdir}/nodif_brain_mask.nii.gz
