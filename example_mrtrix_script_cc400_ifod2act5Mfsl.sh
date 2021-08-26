@@ -1,5 +1,6 @@
 SUBJECT=100206
 
+ATLASDIR=MNIATLASES
 INPUTDIR=HCPDATADIR/${SUBJECT}
 diffdir=${INPUTDIR}/T1w/Diffusion
 regimg=${diffdir}/nodif_brain_mask.nii.gz
@@ -8,7 +9,8 @@ regimg=${diffdir}/nodif_brain_mask.nii.gz
 mrconvert $diffdir/data.nii.gz DWI.mif -fslgrad $diffdir/bvecs $diffdir/bvals -datatype float32 -stride 0,0,0,1 -quiet -force
 dwibiascorrect DWI.mif DWI_bc.mif -ants -bias DWI_biasfield.mif -mask $diffdir/nodif_brain_mask.nii.gz  -force
 dwi2response dhollander DWI_bc.mif RF_wm_dhollander.txt RF_gm_dhollander.txt RF_csf_dhollander.txt -voxels RF_voxels_dhollander.mif  -force
-dwi2fod msmt_csd DWI_bc.mif RF_wm_dhollander.txt RF_wm_dhollander.mif RF_gm_dhollander.txt RF_gm_dhollander.mif RF_csf_dhollander.txt RF_csf_dhollander.mif -mask $diffdir/nodif_brain_mask.nii.gz
+dwi2fod msmt_csd DWI_bc.mif RF_wm_dhollander.txt RF_wm_dhollander.mif RF_gm_dhollander.txt RF_gm_dhollander.mif RF_csf_dhollander.txt RF_csf_dhollander.mif -force
+
 
 #Make 5TT tissue model using FSL FAST, resampled to diffusion volume space
 5ttgen fsl ${INPUTDIR}/T1w/T1w_acpc_dc_restore.nii.gz 5TT_fsl_T1space.mif -mask ${INPUTDIR}/T1w/T1w_acpc_dc_restore_brain.nii.gz -nocrop -force
