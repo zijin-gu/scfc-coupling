@@ -1,6 +1,6 @@
 # SC-FC coupling
 
-This is the analysis scripts of SC-FC coupling for preprint [Regional structural-functional connectome coupling is heritable and associated with age, sex and cognition in adults](https://www.biorxiv.org/content/10.1101/2020.12.09.417725v1).
+This is the analysis scripts of SC-FC coupling for paper [Heritability and interindividual variability of regional structure-function coupling](https://www.nature.com/articles/s41467-021-25184-4).
 All data is created randomly for demonstration purpose.
 
 ## Requirements
@@ -18,7 +18,7 @@ All data is created randomly for demonstration purpose.
 Under the herit_res directory, you will have a file named `herit_cp.mat` which is the heritability estimates using the LME model.
 
 ### References
-Gu, Z., Jamison, K. W., Sabuncu, M. R., & Kuceyeski, A. (2020). Regional structural-functional connectome coupling is heritable and associated with age, sex and cognition in adults. bioRxiv.
+Gu, Z., Jamison, K. W., Sabuncu, M. R., & Kuceyeski, A. (2021). Heritability and interindividual variability of regional structure-function coupling. Nature Communications, 12(1), 1-12.
 
 Ge, T., Holmes, A. J., Buckner, R. L., Smoller, J. W., & Sabuncu, M. R. (2017). Heritability analysis with repeat measurements and its application to resting-state functional connectivity. Proceedings of the National Academy of Sciences, 114(21), 5521-5526.
 
